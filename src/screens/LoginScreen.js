@@ -1,7 +1,6 @@
 import React, {useContext, useEffect} from 'react'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { AuthContext } from "../context/AuthContext";
-import { StackActions } from "@react-navigation/native";
 
 
 const LoginScreen =({navigation}) => {
@@ -9,7 +8,7 @@ const LoginScreen =({navigation}) => {
 
   useEffect(() => {
     if (loggedIn) {
-      navigation.dispatch(StackActions.replace("Home"));
+      navigation.replace("Home");
     }
   }, [loggedIn]);
 

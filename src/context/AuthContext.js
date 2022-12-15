@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Auth0, {useAuth0} from "react-native-auth0";
 import jwtDecode from "jwt-decode";
 
@@ -39,7 +39,7 @@ const AuthContextProvider = (props) => {
         }
       };
 
-      const value = {
+      const variables = {
         loading,
         loggedIn,
         login,
@@ -48,7 +48,7 @@ const AuthContextProvider = (props) => {
       };
     
       return (
-        <AuthContext.Provider value={value}>{props.children}</AuthContext.Provider>
+        <AuthContext.Provider value={variables}>{props.children}</AuthContext.Provider>
       );
     };
     

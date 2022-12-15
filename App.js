@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, StatusBar, SafeAreaView, View } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -6,19 +6,14 @@ import LoadingScreen from './src/screens/LoadingScreen';
 import LoginScreen from './src/screens/LoginScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import {AuthContextProvider} from './src/context/AuthContext';
-import {useAuth0} from 'react-native-auth0';
-
 
 const Stack = createNativeStackNavigator();
 
 
 const App = () => {
-  const {authorize, clearSession, user} = useAuth0();
-  const loggedIn = user !== undefined && user !== null;
-
  
   return (
-    <SafeAreaView style={styles.root}>
+    <SafeAreaView style={styles.container}>
       <StatusBar />
       <AuthContextProvider>
         <NavigationContainer>
@@ -34,7 +29,7 @@ const App = () => {
 };
 
 const styles = StyleSheet.create({
-  root: {
+  container: {
     flex: 1,
     justifyContent: 'center',
   },

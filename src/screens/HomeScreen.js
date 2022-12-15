@@ -38,10 +38,12 @@ const HomeScreen =({navigation}) => {
       fontSize: 24,
       marginBottom: 24,
       fontWeight: '900',
+      textAlign: 'center'
     },
     label: {
       fontSize: 16,
       marginBottom: 8,
+      textAlign: 'center'
     },
     input: {
       height: 40,
